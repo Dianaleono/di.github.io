@@ -276,6 +276,7 @@
             <div>📷 Наведіть камеру на маркер</div>
             <div style="font-size: 12px; margin-top: 5px;">Маркери: A, B, C, D</div>
         </div>
+        <video id="camera-stream" autoplay playsinline style="display: none;"></video>
         <canvas id="ar-canvas" style="width: 100%; height: 100%;"></canvas>
     </div>
 
@@ -305,8 +306,6 @@
             navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
                 .then(stream => {
                     console.log('📷 Камера активована для AR');
-                    const video = document.getElementById('camera-video');
-                    video.srcObject = stream;
                     // В реальному проєкті тут буде ініціалізація MindAR
                 })
                 .catch(err => {
