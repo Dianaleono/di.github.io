@@ -303,7 +303,7 @@
             initializeARSimulation();
             
             // Запуск камери
-            navigator.mediaDevices.getUserMedia({ video: true })
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
                 .then(stream => {
                     console.log('📷 Камера активована для AR');
                     document.getElementById('camera-stream').srcObject = stream;
